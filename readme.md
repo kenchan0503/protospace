@@ -1,4 +1,4 @@
-#テーブル
+#Table
   ##users
     *id
     *group−id
@@ -24,8 +24,15 @@
     *prototype_id
     *paperclip関連
 
-#アソシエーション
+  ##likes
+    *id
+    *protospace_id
+    *like_count
+
+#Associationx
   *user has many prototypes, comments, and photos
-  *protptype belongs to user and has many comments, and photos
+  *protptype belongs to user and has many comments,photos, and likes
   *comment belongs to user and prototype
   *photo belongs to prototype
+  *like belongs to protospace
+
