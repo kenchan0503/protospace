@@ -1,7 +1,7 @@
 #Table
   ##users
     *id
-    *group−id
+    *group_name
     *profile
     *works
     *paperclip関連
@@ -9,27 +9,31 @@
 
   ##prototypes
     *id
-    *user.id
+    *user_id
     *title
     *catchcopy
     *concept
 
   ##comments
     *id
-    *user.id
+    *user_id
+    *prototypes_id
     *text
 
   ##photos
     *id
     *prototype_id
-    *paperclip関連
+    *carrierwave関連
+    *main_photo
+    #sub_photo
+
 
   ##likes
     *id
-    *protospace_id
+    *prototype_id
     *like_count
 
-#Associationx
+#Association
   *user has many prototypes, comments, and photos
   *protptype belongs to user and has many comments,photos, and likes
   *comment belongs to user and prototype
