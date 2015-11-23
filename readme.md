@@ -4,7 +4,7 @@
     *group_name
     *profile
     *works
-    *paperclip関連
+    *carrierwave関連
     *devise関連
 
   ##prototypes
@@ -38,5 +38,5 @@
   *protptype belongs to user and has many comments,photos, and likes
   *comment belongs to user and prototype
   *photo belongs to prototype
-  *like belongs to protospace
+  *like belongs to prototype
 
