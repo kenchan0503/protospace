@@ -25,7 +25,7 @@
     *prototype_id
     *carrierwave関連
     *main_photo
-    #sub_photo
+    *sub_photo
 
 
   ##likes
