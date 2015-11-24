@@ -1,37 +1,35 @@
 #Table
   ##users
-    *id
-    *group_name
-    *profile
-    *works
+    *id(integer)
+    *group_name(string)
+    *profile(text)
+    *works(string)
     *carrierwave関連
     *devise関連
 
   ##prototypes
-    *id
-    *user_id
-    *title
-    *catchcopy
-    *concept
+    *id(integer)
+    *user_id(integer)
+    *title(string)
+    *catchcopy(text)
+    *concept(text)
 
   ##comments
-    *id
-    *user_id
-    *prototypes_id
-    *text
+    *id(integer)
+    *user_id(integer)
+    *prototypes_id(integer)
+    *text(text)
 
   ##photos
-    *id
-    *prototype_id
+    *id(integer)
+    *prototype_id(integer)
     *carrierwave関連
-    *main_photo
-    *sub_photo
-
+    *status(integer)
 
   ##likes
-    *id
-    *prototype_id
-    *like_count
+    *id(integer)
+    *prototype_id(integer)
+    *like_count(integer)
 
 #Association
   *user has many prototypes, comments, and photos
