@@ -8,6 +8,6 @@ class CreatePrototypes < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :prototypes, :user
+    add_index :prototypes, :user_id
   end
 end
