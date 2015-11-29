@@ -6,7 +6,7 @@ class CreateLikes < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :likes, :prototype
+    add_index :likes, :prototype_id
 
   end
 end
