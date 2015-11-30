@@ -14,10 +14,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    User.update
   end
 
-  private
-  def create_params
-  end
 end
