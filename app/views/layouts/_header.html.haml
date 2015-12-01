@@ -20,9 +20,9 @@
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
-              %a{:href => "#"} Profile Edit
+              = link_to 'Profile Edit', edit_user_registration_path
             %li
-              %a{:href => "#"} Logout
+              = link_to 'Logout', destroy_user_session_path
         %li
           .btn.btn-primary.navbar-btn
             %a{:href => "/proto/new"}
