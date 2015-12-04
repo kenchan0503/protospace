@@ -47,5 +47,6 @@ group :development do
   gem 'erb2haml'
   gem 'pry-rails'
   gem 'bootstrap-sass'
+  gem 'devise'
 end
 
