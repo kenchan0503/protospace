@@ -3,4 +3,6 @@ class Prototype < ActiveRecord::Base
   has_many :comments
   has_many :photos
   has_many :likes
+
+  mount_uploader :avatar, AvatarUploader
 end
