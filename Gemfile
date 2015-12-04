@@ -48,5 +48,5 @@ group :development do
   gem 'pry-rails'
   gem 'bootstrap-sass'
   gem 'devise'
+  gem 'carrierwave'
 end
-
