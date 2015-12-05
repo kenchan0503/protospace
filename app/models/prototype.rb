@@ -5,5 +5,5 @@ class Prototype < ActiveRecord::Base
   has_many :likes
 
   mount_uploader :avatar, AvatarUploader
-  accepts_nested_attribute_for :photos
+  accepts_nested_attributes_for :photos
 end
