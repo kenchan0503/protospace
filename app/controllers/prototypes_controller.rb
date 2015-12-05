@@ -4,11 +4,12 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    Review.create(create_params)
+    Prototype.create(prototype_params)
   end
 
   private
   def prototype_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, :avatar)
+    binding.pry
+    params.require(:prototype).permit(:title, :catchcopy, :concept, :avatar).merge(user_id: current_user.id)
   end
 end
