@@ -6,6 +6,7 @@ class PrototypesController < ApplicationController
 
   def create
     Prototype.create(prototype_params)
+    redirect_to :root and return
   end
 
   private
