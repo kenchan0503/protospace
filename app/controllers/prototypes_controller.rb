@@ -10,7 +10,6 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    binding.pry
-    params.require(:prototype).permit(:title, :catchcopy, :concept, :avatar).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:avatar]).merge(user_id: current_user.id)
   end
 end
