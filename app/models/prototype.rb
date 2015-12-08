@@ -4,6 +4,7 @@ class Prototype < ActiveRecord::Base
   has_many :photos
   has_many :likes
 
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :url, PhotoUploader
   accepts_nested_attributes_for :photos
+  validates :title, :catchcopy, :concept, presence: true
 end

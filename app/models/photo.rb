@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
   belongs_to :prototype
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :url, PhotoUploader
+  validates :url, presence: true
 end

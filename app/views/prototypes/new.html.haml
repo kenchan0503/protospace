@@ -10,19 +10,19 @@
                 .row
                   .col-md-12
                     .cover-image-upload
-                      = photos_form.file_field :avatar
+                      = photos_form.file_field :url
                       = photos_form.hidden_field :status, :value => 0
                   .col-md-12
                     %ul.proto-sub-list.list-group
                       %li.list-group-item.col-md-4
                         .image-upload
                           = f.fields_for :photos do |photos_form|
-                            = photos_form.file_field :avatar
+                            = photos_form.file_field :url
                             = photos_form.hidden_field :status, :value => 1
                       %li.list-group-item.col-md-4
                         .image-upload
                           = f.fields_for :photos do |photos_form|
-                            = photos_form.file_field :avatar
+                            = photos_form.file_field :url
                             = photos_form.hidden_field :status, :value => 1
                       %li.list-group-item.col-md-4
                         .image-upload-plus
