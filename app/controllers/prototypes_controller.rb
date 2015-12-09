@@ -5,7 +5,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype =Prototype.new(prototype_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     if @prototype.save
       redirect_to :root
     else
@@ -15,6 +15,6 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:url, :status]).merge(user_id: current_user.id)
+    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:url, :status])
   end
 end
