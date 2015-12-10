@@ -17,6 +17,11 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
   end
 
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:url, :status])
