@@ -1,6 +1,6 @@
 .container
   .proto-new
-    = form_for (@prototype) do |f|
+    = form_for(@prototype, action: "update", method: "patch") do |f|
       .col-md-8.col-md-offset-2
         %header.row.user-nav.row
           .col-md-12
