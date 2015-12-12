@@ -24,6 +24,9 @@ class PrototypesController < ApplicationController
     @photos = @prototype.photos
   end
 
+  def update
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:id, :url, :status])
