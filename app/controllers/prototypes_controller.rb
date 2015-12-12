@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
   def new
     @prototype = Prototype.new
-    @prototype.photos.build
+    @photos = @prototype.photos.build
   end
 
   def create
@@ -9,6 +9,8 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root
     else
+      @prototype = Prototype.new
+      @photos = @prototype.photos
       render :new
     end
   end
@@ -19,11 +21,11 @@ class PrototypesController < ApplicationController
 
   def edit
     @prototype = Prototype.find(params[:id])
+    @photos = @prototype.photos
   end
-
 
   private
   def prototype_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:url, :status])
+    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:id, :url, :status])
   end
 end
