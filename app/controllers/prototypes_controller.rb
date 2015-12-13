@@ -25,6 +25,13 @@ class PrototypesController < ApplicationController
   end
 
   def update
+    @prototype = Prototype.find(params[:id])
+    if @prototype.update(prototype_params)
+      redirect_to :root
+    else
+      @photos = @prototype.photos
+      render :edit
+    end
   end
 
   private
