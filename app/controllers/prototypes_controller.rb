@@ -34,6 +34,9 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:id, :url, :status])
