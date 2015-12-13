@@ -31,6 +31,8 @@
                   %a.btn.btn-default{:href => "#"} iPad
                 %li
                   %a.btn.btn-default{:href => "#"} wireframe
+              = link_to "edit", edit_prototype_path(prototype)
+              = link_to "delete", prototype_path(prototype), method: "delete"
 
 .text-center
   %ul.pagination
