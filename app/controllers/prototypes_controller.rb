@@ -3,7 +3,7 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
-    @photos = @prototype.photos.build
+    @photo = @prototype.photos.build
   end
 
   def create
