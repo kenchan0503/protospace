@@ -1,4 +1,6 @@
 class PrototypesController < ApplicationController
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
+
   def new
     @prototype = Prototype.new
     @photos = @prototype.photos.build
@@ -9,23 +11,19 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root
     else
-      @prototype = Prototype.new
-      @photos = @prototype.photos
+      @photo = @prototype.photos
       render :new
     end
   end
 
   def show
-    @prototype = Prototype.find(params[:id])
   end
 
   def edit
-    @prototype = Prototype.find(params[:id])
     @photos = @prototype.photos
   end
 
   def update
-    @prototype = Prototype.find(params[:id])
     if @prototype.update(prototype_params)
       redirect_to :root
     else
@@ -35,13 +33,16 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    @prototype = Prototype.find(params[:id])
     @prototype.destroy
     redirect_to :root
   end
 
   private
   def prototype_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:id, :url, :status])
+    params.require(:prototype).permit(:title, :catchcopy, :concept, photos_attributes: [:id, :url, :main, :sub])
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 end
