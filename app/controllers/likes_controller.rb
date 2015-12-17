@@ -8,8 +8,8 @@ class LikesController < ApplicationController
 
   def unlike
     @prototype = Prototype.find(params[:prototype])
-    @like = current_user.likes.build(prototype_id: @prototype.id)
+    @like = current_user.likes.find_by(prototype_id: @prototype.id)
     @like.destroy
-    redirect_to @protoytpe
+    redirect_to @prototype
   end
 end
