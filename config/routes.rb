@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :top, only: [:index]
   resources :user, only: [:show, :new, :create, :edit, :update, :destroy]
+<<<<<<< HEAD
   resources :prototypes, only: [:show, :new, :create]
   post 'like/:prototype.id' => 'likes#like', as: 'like'
   delete 'unlike/:prototype.id' => 'likes#unlike', as: 'unlike'
+=======
+  resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
+>>>>>>> 753532c5736cc9f0098f59ce4ad33543d359b43a
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
