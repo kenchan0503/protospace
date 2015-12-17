@@ -1,153 +1,38 @@
 .jumbotron
   .container.text-center
-    = image_tag("header_logo.png", :alt => "PROTO TYPE - SHARE THE PROTOTYPE", :height => "73px")
+    = image_tag("header_logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "73px")
 
 .filter-nav
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{:role => "presentation"}
-          %a{:href => "#"} Popular PROTO
-        %li{:role => "presentation"}
-          %a{:href => "#"} Newest PROTO
-      %button{:type => "button", :class => "btn btn-default col-lg-1"} View Tags
+        %li.active{role: "presentation"}
+          %a{href: "#"} Popular PROTO
+        %li{role: "presentation"}
+          %a{href: "#"} Newest PROTO
+      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
 
 .container.proto-list
   .row
     .col-sm-4.col-md-3.proto-content
       .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
+        - @prototypes.each do |prototype|
+          = link_to "", prototype_path(prototype)
+          = image_tag prototype.photos[0].url
           .caption
-            %h3 Salvation Army on iPad App Wireframe
+            = link_to "#{ prototype.title }", prototype_path(prototype)
             .proto-meta
               .proto-user
-                %a{:href => "#"} by user
+                = link_to "by #{ prototype.user.user_name }", user_path(prototype.user)
               .proto-posted
                 Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
-
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{:href => ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
-            .proto-meta
-              .proto-user
-                %a{:href => "#"} by user
-              .proto-posted
-                Apr 26
-            %ul.proto-tag-list.list-inline
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li 
-                %a{:href => "#", :class => "btn btn-default"} wireframe
+              %ul.proto-tag-list.list-inline
+                %li
+                  %a.btn.btn-default{:href => "#"} iPad
+                %li
+                  %a.btn.btn-default{:href => "#"} wireframe
+              = link_to "edit", edit_prototype_path(prototype)
+              = link_to "delete", prototype_path(prototype), method: "delete"
 
 .text-center
   %ul.pagination
