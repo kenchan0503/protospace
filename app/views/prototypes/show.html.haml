@@ -16,7 +16,11 @@
 
     .col-md-6.text-right
       %button.btn.btn-default
-        = image_tag("icon_heart.svg")
+        - if current_user.likes.find_by(prototype_id: @prototype.id)
+          = link_to 'いいね済み', unlike_path(@prototype), method: :delete
+        - else
+          = link_to image_tag("icon_heart.svg"), like_path(@prototype), method: :post
+
         Like
         %span.num 20
   .row
