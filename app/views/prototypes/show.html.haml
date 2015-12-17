@@ -16,14 +16,9 @@
 
     .col-md-6.text-right
       %button.btn.btn-default
-        - if current_user.likes.find_by(prototype_id: @prototype.id)
-          = link_to 'いいね済み', unlike_path(@prototype), method: :delete, remote: true
-        - else
-          = link_to image_tag("icon_heart.svg"), like_path(@prototype), method: :post, remote: true
+        #like
+          = render "likes/like", prototype: @prototype
 
-        Like
-        %span.num
-          = @prototype.likes.count
   .row
     .col-md-9
       = image_tag @prototype.photos.main[0].url, class: 'img-responsive'
