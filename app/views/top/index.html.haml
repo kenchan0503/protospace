@@ -20,10 +20,10 @@
           = link_to "", prototype_path(prototype)
           = image_tag prototype.photos[0].url
           .caption
-            = link_to "#{prototype.title}", prototype_path(prototype)
+            = link_to "#{ prototype.title }", prototype_path(prototype)
             .proto-meta
               .proto-user
-                = link_to "by #{prototype.user.user_name}", user_path(prototype.user)
+                = link_to "by #{ prototype.user.user_name }", user_path(prototype.user)
               .proto-posted
                 Apr 26
               %ul.proto-tag-list.list-inline
