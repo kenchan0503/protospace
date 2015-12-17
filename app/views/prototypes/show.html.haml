@@ -22,7 +22,8 @@
           = link_to image_tag("icon_heart.svg"), like_path(@prototype), method: :post
 
         Like
-        %span.num 20
+        %span.num
+          = @prototype.likes.count
   .row
     .col-md-9
       = image_tag @prototype.photos.main[0].url, class: 'img-responsive'
