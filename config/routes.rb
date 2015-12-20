@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'top#like_order'
+  root 'top#index'
   get 'prototypes/newest' => 'top#new_order'
   resources :user, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
