@@ -1,6 +1,10 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @prototypes = Prototype.all
+  end
+
   def new
     @prototype = Prototype.new
     @photo = @prototype.photos.build
