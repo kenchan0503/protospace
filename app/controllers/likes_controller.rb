@@ -13,6 +13,6 @@ class LikesController < ApplicationController
 
   private
   def set_prototype
-    @prototype = Prototype.find(params[:prototype])
+    @prototype = Prototype.find(params[:id])
   end
 end
