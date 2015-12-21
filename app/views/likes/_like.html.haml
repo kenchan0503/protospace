@@ -1,7 +1,7 @@
 - if current_user.likes.find_by(prototype_id: prototype.id)
-  = link_to image_tag("icon_heart_red.svg") , unlike_path(prototype), method: :delete, remote: true
+  = link_to image_tag("icon_heart_red.svg") ,  prototype_like_path(prototype, like), method: :delete, remote: true
 - else
-  = link_to image_tag("icon_heart.svg"), like_path(prototype), method: :post, remote: true
+  = link_to image_tag("icon_heart.svg"), prototype_likes_path(prototype, like), method: :post, remote: true
 LIKE
 %span.num
   #like-count
