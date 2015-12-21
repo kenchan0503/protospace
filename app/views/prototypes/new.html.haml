@@ -1,12 +1,12 @@
 .container
   .proto-new
-    = form_for (@prototype) do |f|
+    = form_for @prototype do |f|
       .col-md-8.col-md-offset-2
         %header.row.user-nav.row
           .col-md-12
             .proto-new-title
               = f.text_field :title, placeholder: 'Title'
-              = f.fields_for @photo do |photos_form|
+              = f.fields_for :photos, @photos do |photos_form|
                 .row
                   .col-md-12
                     .cover-image-upload
@@ -16,12 +16,12 @@
                     %ul.proto-sub-list.list-group
                       %li.list-group-item.col-md-4
                         .image-upload
-                          = f.fields_for :photos do |photos_form|
+                          = f.fields_for :photos, @photos do |photos_form|
                             = photos_form.file_field :url
                             = photos_form.hidden_field :status, value: "sub"
                       %li.list-group-item.col-md-4
                         .image-upload
-                          = f.fields_for :photos do |photos_form|
+                          = f.fields_for :photos, @photos do |photos_form|
                             = photos_form.file_field :url
                             = photos_form.hidden_field :status, value: "sub"
                       %li.list-group-item.col-md-4
