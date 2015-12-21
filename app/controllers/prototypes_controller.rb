@@ -1,6 +1,10 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @prototypes = Prototype.all
+  end
+
   def new
     @prototype = Prototype.new
     @photo = @prototype.photos.build
@@ -17,6 +21,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @like = current_user.likes.find_by(prototype_id: @prototype.id)
   end
 
   def edit

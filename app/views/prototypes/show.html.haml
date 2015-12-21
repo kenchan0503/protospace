@@ -16,9 +16,9 @@
 
     .col-md-6.text-right
       %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+        #like
+          = render "likes/like", { prototype: @prototype, like: @like }
+
   .row
     .col-md-9
       = image_tag @prototype.photos.main[0].url, class: 'img-responsive'
