@@ -8,7 +8,7 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
-    @photo = @prototype.photos.build
+    @photos = @prototype.photos.build
   end
 
   def create
@@ -16,7 +16,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root
     else
-      @photo = @prototype.photos
+      @photos = @prototype.photos
       render :new
     end
   end
