@@ -8,9 +8,6 @@
       = image_tag("logo.png", :alt => "PROTO TYPE - SHARE THE PROTOTYPE", :height => "36px")
     .navbar-collapse.collapse.navbar-responsive-collapse
       - if user_signed_in?
-        %li
-          .btn.btn-primary.navbar-btn
-            = link_to 'New Proto', new_prototype_path
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -26,3 +23,6 @@
           %li
             .btn.btn-primary.navbar-btn
               = link_to 'Get Started', new_user_session_path
+        %li
+          .btn.btn-primary.navbar-btn
+            = link_to 'New Proto', new_prototype_path
