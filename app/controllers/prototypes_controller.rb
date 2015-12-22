@@ -3,7 +3,12 @@ class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
 
   def index
-    @prototypes = Prototype.all
+    prototype_ids = Like.group(:prototype_id).order('count_prototype_id DESC').page(params[:page]).per(5).count(:prototype_id).keys
+    @like_order_prototypes = prototype_ids.map{ |id| Prototype.find(id) }
+  end
+
+  def newest
+    @new_order_prototypes = Prototype.page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
