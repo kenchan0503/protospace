@@ -22,6 +22,7 @@ class PrototypesController < ApplicationController
 
   def show
     @like = current_user.likes.find_by(prototype_id: @prototype.id)
+    @comments = @prototype.comments
     if user_signed_in?
       @comment = current_user.comments.new
     end
