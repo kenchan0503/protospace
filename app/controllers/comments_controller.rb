@@ -9,4 +9,8 @@ class CommentsController < ApplicationController
   def set_prototype
     @prototype = Prototype.find(params[:prototype_id])
   end
+
+  def comment_params
+    params.require(:comment).permit(:text)
+  end
 end
