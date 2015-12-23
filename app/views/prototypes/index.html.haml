@@ -2,4 +2,16 @@
   .container.text-center
     = image_tag("header_logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "73px")
 
-= render 'prototype', prototypes: @prototypes
+.filter-nav
+  .container
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li.active{role: "presentation"}
+          = link_to "Popular PROTO", root_path, remote: true
+        %li{role: "presentation"}
+          = link_to "Newest PROTO", newest_prototypes_path, remote: true
+      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
+
+.container-proto-list
+  .row
+    = render 'prototype', prototypes: @prototypes
