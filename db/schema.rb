@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216032505) do
+ActiveRecord::Schema.define(version: 20151223005814) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",         limit: 65535
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(version: 20151216032505) do
     t.text     "catchcopy",  limit: 65535
     t.text     "concept",    limit: 65535
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "like_count", limit: 4,     default: 0
   end
 
   add_index "prototypes", ["user_id"], name: "index_prototypes_on_user_id", using: :btree
