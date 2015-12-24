@@ -1,0 +1,7 @@
+%h4 Write a comment
+  .row
+    .form-group.col-md-10
+      = form_for [@prototype, @comment], remote: true do |f|
+        =f.text_area :text, placeholder: "Your comments", rows: "3", class: 'textarea form-control'
+        =f.submit 'COMMENT', class: 'button btn btn-primary'
+        
