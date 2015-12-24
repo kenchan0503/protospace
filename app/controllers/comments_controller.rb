@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def create
     current_user.comments.create(prototype_id: @prototype.id, text: comment_params[:text])
     @comments = @prototype.comments
+    @comment = Comment.new
   end
 
   private
