@@ -43,4 +43,8 @@
           %a{:href => "#", :class => "btn btn-default"} iPad
         %li 
           %a{:href => "#", :class => "btn btn-default"} wireframe
-= render "comments/comment", { prototype: @prototype, comments: @comments, comment: @comment }
+    %h4.col-md-12
+      Comments
+      %span.num
+        = @comments.count
+    = render "comments/form", { prototype: @prototype, comments: @comments, comment: @comment}
