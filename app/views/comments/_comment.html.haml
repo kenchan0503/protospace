@@ -1,8 +1,8 @@
 %h4.col-md-12
   Comments
   %span.num
-    = @comments.count
-- @comments.each do |comment|
+    = comments.count
+- comments.each do |comment|
   .row.proto-comments
     .col-md-8
       .media
@@ -14,13 +14,13 @@
             = comment.user.user_name
             %a.anchorjs-link{:href => "#top-aligned-media"}
               %span.anchorjs-icon
-          = comment.text
+                = comment.text
 -if user_signed_in?
   #comment
     %h4 Write a comment
     .row
       .form-group.col-md-10
         = form_for [prototype, comment], remote: true do |f|
-          =f.text_area :text, placeholder: "Your comments", rows: "3", class: 'textarea form-control'
-          =f.submit 'COMMENT', class: 'button btn btn-primary'
+          = f.text_area :text, placeholder: "Your comments", rows: "3", class: 'textarea form-control'
+          = f.submit 'COMMENT', class: 'button btn btn-primary'
         
