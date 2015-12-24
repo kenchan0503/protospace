@@ -49,4 +49,5 @@ group :development do
   gem 'bootstrap-sass'
   gem 'devise'
   gem 'carrierwave'
+  gem 'acts-as-taggable-on', '~> 3.4'
 end
