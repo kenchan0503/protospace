@@ -61,4 +61,5 @@
               %span.anchorjs-icon
           = comment.text
 -if user_signed_in?
-  = render "comments/comment", { prototype: @prototype, comment: @comments }
+  #comment
+    = render "comments/comment", { prototype: @prototype, comment: @comments }
