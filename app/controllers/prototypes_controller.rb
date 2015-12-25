@@ -3,7 +3,7 @@ class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
 
   def index
-    @prototypes = Prototype.page(params[:page]).per(5).order("like_count DESC")
+    @prototypes = Prototype.page(params[:page]).per(5).order("likes_count DESC")
   end
 
   def newest
