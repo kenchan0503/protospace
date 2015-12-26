@@ -6,10 +6,6 @@ class PrototypesController < ApplicationController
     @prototypes = Prototype.page(params[:page]).order("likes_count DESC")
   end
 
-  def newest
-    @prototypes = Prototype.page(params[:page]).order("created_at DESC")
-  end
-
   def new
     @prototype = Prototype.new
     @photos = @prototype.photos.build
