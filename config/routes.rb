@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :prototypes do
     resources :likes, only: [:create, :destroy]
     collection do
-      get 'newest' => 'prototypes#newest'
+      get 'newest' => 'newest#index'
     end
   end
   resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
