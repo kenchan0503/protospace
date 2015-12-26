@@ -3,4 +3,4 @@
     $("li.active").removeClass("active");
     $(this).addClass("active");
   });
-  $('.container-proto-list.row').html('#{ escape_javascript(render("prototype", prototypes: @prototypes ))}');
+  $('.container-proto-list .row').html('#{ escape_javascript(render("prototype", prototypes: @prototypes ))}');
