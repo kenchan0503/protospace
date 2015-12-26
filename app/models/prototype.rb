@@ -4,7 +4,6 @@ class Prototype < ActiveRecord::Base
   has_many :photos
   has_many :likes, dependent: :destroy
   acts_as_taggable_on :prototypes
-  acts_as_taggable
   accepts_nested_attributes_for :photos
   validates :title, :catchcopy, :concept, presence: true
 end
