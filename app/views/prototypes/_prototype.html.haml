@@ -18,7 +18,6 @@
                 %a.btn.btn-default{:href => "#"} wireframe
             = link_to "edit", edit_prototype_path(prototype)
             = link_to "delete", prototype_path(prototype), method: "delete"
-      = paginate(prototypes)
 .text-center
   %ul.pagination
     = paginate(prototypes)
