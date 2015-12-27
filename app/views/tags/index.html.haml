@@ -4,4 +4,5 @@
       %h2 Tags list
       %ul
         - @tags.each do |tag|
-          = link_to tag.name, tag_path(tag.name), class: "btn btn-default"
+          %li.col-md-4
+            = link_to tag.name, tag_path(tag.name), class: "btn btn-default"
