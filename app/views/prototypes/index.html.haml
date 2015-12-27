@@ -28,9 +28,8 @@
                 Apr 26
               %ul.proto-tag-list.list-inline
                 %li
-                  %a.btn.btn-default{:href => "#"} iPad
-                %li
-                  %a.btn.btn-default{:href => "#"} wireframe
+                  - prototype.tag_list.each do |tag|
+                    = link_to tag, tag_path(tag), class: "btn btn-default"
               = link_to "edit", edit_prototype_path(prototype)
               = link_to "delete", prototype_path(prototype), method: "delete"
 
