@@ -6,7 +6,7 @@
           .col-md-12
             .proto-new-title
               = f.text_field :title, placeholder: 'Title'
-              = f.fields_for :photos, @photos do |photos_form|
+              = f.fields_for :photo, @photo do |photos_form|
                 .row
                   .col-md-12
                     .cover-image-upload
@@ -16,12 +16,12 @@
                     %ul.proto-sub-list.list-group
                       %li.list-group-item.col-md-4
                         .image-upload
-                          = f.fields_for :photos, @photos do |photos_form|
+                          = f.fields_for :photo, @photo do |photos_form|
                             = photos_form.file_field :url
                             = photos_form.hidden_field :status, value: "sub"
                       %li.list-group-item.col-md-4
                         .image-upload
-                          = f.fields_for :photos, @photos do |photos_form|
+                          = f.fields_for :photo, @photo do |photos_form|
                             = photos_form.file_field :url
                             = photos_form.hidden_field :status, value: "sub"
                       %li.list-group-item.col-md-4
