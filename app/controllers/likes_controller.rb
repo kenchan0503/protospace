@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_prototype
+  before_action :set_like, only: :create
 
   def create
     @like.save
