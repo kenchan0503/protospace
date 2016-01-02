@@ -4,7 +4,7 @@
       .media
         .media-left
           %a{:href => "#"}
-          = link_to image_tag('<%= @prototype.user.avatar %>',:alt => "64 * 64",:width => "64",:height => "64", class: "media-object")
+          = link_to image_tag('<%= @prototype.user.avatar %>', alt: "64 * 64", width: "64", height: "64", class: "media-object")
         .media-body
           %h4#top-aligned-media.media-heading
           = @prototype.title
@@ -40,9 +40,9 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li 
-          %a{:href => "#", :class => "btn btn-default"} iPad
+          %a{ href: "#", class: "btn btn-default"} iPad
         %li 
-          %a{:href => "#", :class => "btn btn-default"} wireframe
+          %a{ href: "#", class: "btn btn-default"} wireframe
     %h4.col-md-12
       Comments
       %span.num
