@@ -1,0 +1,6 @@
+:plain
+  $("li").on("click", function() {
+    $("li.active").removeClass("active");
+    $(this).addClass("active");
+  });
+  $('.container-proto-list .row').html('#{ escape_javascript(render("/prototypes/prototype", prototypes: @prototypes ))}');

@@ -1,8 +1,9 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
-    @prototypes = Prototype.all
+    @prototypes = Prototype.page(params[:page]).order(likes_count: :desc)
   end
 
   def new
@@ -15,7 +16,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root
     else
-      @photo = @prototype.photos
+      @photos = @prototype.photos
       render :new
     end
   end

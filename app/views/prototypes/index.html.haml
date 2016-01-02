@@ -7,50 +7,11 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.active{role: "presentation"}
-          %a{href: "#"} Popular PROTO
+          = link_to "Popular PROTO", root_path, remote: true
         %li{role: "presentation"}
-          %a{href: "#"} Newest PROTO
+          = link_to "Newest PROTO", prototypes_newest_index_path, remote: true
       %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
 
-.container.proto-list
+.container-proto-list
   .row
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        - @prototypes.each do |prototype|
-          = link_to "", prototype_path(prototype)
-          = image_tag prototype.photos[0].url
-          .caption
-            = link_to "#{ prototype.title }", prototype_path(prototype)
-            .proto-meta
-              .proto-user
-                = link_to "by #{ prototype.user.user_name }", user_path(prototype.user)
-              .proto-posted
-                Apr 26
-              %ul.proto-tag-list.list-inline
-                %li
-                  %a.btn.btn-default{:href => "#"} iPad
-                %li
-                  %a.btn.btn-default{:href => "#"} wireframe
-              = link_to "edit", edit_prototype_path(prototype)
-              = link_to "delete", prototype_path(prototype), method: "delete"
-
-.text-center
-  %ul.pagination
-    %li.disabled
-      %a{"aria-label" => "Previous", :href => "#"}
-        %span{"aria-hidden" => "true"} «
-    %li.active
-      %a{:href => "#"}
-        1
-        %span.sr-only (current)
-    %li
-      %a{:href => "#"} 2
-    %li
-      %a{:href => "#"} 3
-    %li
-      %a{:href => "#"} 4
-    %li
-      %a{:href => "#"} 5
-    %li
-      %a{"aria-label" => "Next", :href => "#"}
-        %span{"aria-hidden" => "true"} »
+    = render 'prototype', prototypes: @prototypes

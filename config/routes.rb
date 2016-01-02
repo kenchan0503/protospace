@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
-  resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
+  namespace :prototypes do
+    resources :newest, only: :index
+  end
 end
