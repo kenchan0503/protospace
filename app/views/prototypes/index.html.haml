@@ -10,7 +10,7 @@
           = link_to "Popular PROTO", root_path, remote: true
         %li{role: "presentation"}
           = link_to "Newest PROTO", prototypes_newest_index_path, remote: true
-      = button_to "VIEW TAGS", tags_path, class: "btn btn-default col-lg-1", method: "get"
+      = button_to "VIEW TAGS", tags_path, class: "btn btn-default col-lg-1"
 
 .container-proto-list
   .row
@@ -43,13 +43,13 @@
         1
         %span.sr-only (current)
     %li
-      %a{:href => "#"} 2
+      %a{ href: "#"} 2
     %li
-      %a{:href => "#"} 3
+      %a{ href: "#"} 3
     %li
-      %a{:href => "#"} 4
+      %a{ href: "#"} 4
     %li
-      %a{:href => "#"} 5
+      %a{ href: "#"} 5
     %li
-      %a{"aria-label" => "Next", :href => "#"}
+      %a{"aria-label" => "Next", href: "#"}
         %span{"aria-hidden" => "true"} »
