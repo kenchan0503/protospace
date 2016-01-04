@@ -1,0 +1,23 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    .test1
+      - prototypes.each do |prototype|
+        = link_to "", prototype_path(prototype)
+        = image_tag prototype.photos[0].url
+        .caption
+          = link_to "#{ prototype.title }", prototype_path(prototype)
+          .proto-meta
+            .proto-user
+              = link_to "by #{ prototype.user.user_name }", user_path(prototype.user)
+            .proto-posted
+              Apr 26
+            %ul.proto-tag-list.list-inline
+              %li
+                %a.btn.btn-default{ href: "#"} iPad
+              %li
+                %a.btn.btn-default{ href: "#"} wireframe
+            = link_to "edit", edit_prototype_path(prototype)
+            = link_to "delete", prototype_path(prototype), method: "delete"
+.text-center
+  %ul.pagination
+    = paginate(prototypes)

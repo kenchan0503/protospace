@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151224092218) do
+=======
+ActiveRecord::Schema.define(version: 20151225074231) do
+>>>>>>> 6cdcc36b658267c5c0ec4576d6a34dbb4ec15726
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",         limit: 65535
@@ -24,10 +28,9 @@ ActiveRecord::Schema.define(version: 20151224092218) do
   add_index "comments", ["user_id", "prototype_id"], name: "index_comments_on_user_id_and_prototype_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
-    t.integer  "like_count",   limit: 4,   default: 0
     t.integer  "prototype_id", limit: 4
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "user_id",      limit: 255
   end
 
@@ -44,6 +47,7 @@ ActiveRecord::Schema.define(version: 20151224092218) do
   add_index "photos", ["prototype_id"], name: "index_photos_on_prototype_id", using: :btree
 
   create_table "prototypes", force: :cascade do |t|
+<<<<<<< HEAD
     t.string   "title",      limit: 255
     t.text     "catchcopy",  limit: 65535
     t.text     "concept",    limit: 65535
@@ -51,6 +55,16 @@ ActiveRecord::Schema.define(version: 20151224092218) do
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.integer  "like_count", limit: 4,     default: 0
+=======
+    t.string   "title",       limit: 255
+    t.text     "catchcopy",   limit: 65535
+    t.text     "concept",     limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "like_count",  limit: 4
+    t.integer  "likes_count", limit: 4,     default: 0
+>>>>>>> 6cdcc36b658267c5c0ec4576d6a34dbb4ec15726
   end
 
   add_index "prototypes", ["user_id"], name: "index_prototypes_on_user_id", using: :btree

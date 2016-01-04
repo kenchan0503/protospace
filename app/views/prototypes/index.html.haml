@@ -7,12 +7,12 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.active{role: "presentation"}
-          %a{href: "#"} Popular PROTO
+          = link_to "Popular PROTO", root_path, remote: true
         %li{role: "presentation"}
-          %a{href: "#"} Newest PROTO
+          = link_to "Newest PROTO", prototypes_newest_index_path, remote: true
       = button_to "VIEW TAGS", tags_path, class: "btn btn-default col-lg-1", method: "get"
 
-.container.proto-list
+.container-proto-list
   .row
     .col-sm-4.col-md-3.proto-content
       .thumbnail
@@ -53,3 +53,4 @@
     %li
       %a{"aria-label" => "Next", :href => "#"}
         %span{"aria-hidden" => "true"} »
+    = render 'prototype', prototypes: @prototypes
