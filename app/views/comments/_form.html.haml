@@ -1,0 +1,20 @@
+#comment
+  - comments.each do |comment|
+    .row.proto-comments
+      .col-md-8
+        .media
+          .media-left
+            %a{ href: "#"}
+              %img.media-object{ alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", src: " = comment.user.avatar", style: "width: 64px; height: 64px;"}/
+          .media-body
+            %h4#top-aligned-media.media-heading
+              = comment.user.user_name
+              %span.anchorjs-icon
+                = comment.text
+  -if user_signed_in?
+    %h4 Write a comment
+    .row
+      .form-group.col-md-10
+        = form_for [prototype, comment], remote: true do |f|
+          = f.text_area :text, placeholder: "Your comments", rows: "3", class: 'textarea form-control'
+          = f.submit 'COMMENT', class: 'button btn btn-primary'
