@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   namespace :prototypes do
     resources :newest, only: :index
   end
+  resources :prototypes, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :tags, only: [:index, :show]
 end
