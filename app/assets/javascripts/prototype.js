@@ -9,7 +9,7 @@ $(function() {
     if (! file.type.match('image.*')) {
       // クリア
       $(this).val('');
-      $('span').html('');
+      $('#prototype_photo_url_main').html('');
       return;
     }
 
