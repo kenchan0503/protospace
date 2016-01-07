@@ -1,7 +1,7 @@
 $(function() {
   add_image("#prototype_photo_url_main", "#main_src");
-  add_image("#prototype_photo_url_sub_0", "#sub_src_0")
-  add_image("#prototype_photo_url_sub_1", "#sub_src_1")
+  add_image("#prototype_photo_url_sub_0", "#sub_src_0");
+  add_image("#prototype_photo_url_sub_1", "#sub_src_1");
 });
   // アップロードするファイルを選択
   function add_image(photo_url, src){
