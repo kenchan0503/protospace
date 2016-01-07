@@ -2,7 +2,7 @@ $(function() {
   $('input[type=file]').after('<span></span>');
 
   // アップロードするファイルを選択
-  $('input[type=file]').change(function() {
+  $("#prototype_photo_url_main").change(function() {
     var file = $(this).prop('files')[0];
 
     // 画像以外は処理を停止
@@ -16,8 +16,8 @@ $(function() {
     // 画像表示
     var reader = new FileReader();
     reader.onload = function() {
-      var img_src = $('<img>').attr('src', reader.result);
-      $('span').html(img_src);
+      var main_src = $("#main_src").attr('src', reader.result);
+      $('#main_src').html(main_src);
     }
     reader.readAsDataURL(file);
   });
