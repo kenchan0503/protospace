@@ -18,12 +18,14 @@
                       %li.list-group-item.col-md-4
                         .image-upload
                           = f.fields_for :photo, @photo do |photos_form|
-                            = photos_form.file_field :url
+                            = photos_form.file_field :url, id: "prototype_photo_url_sub_0"
+                            = image_tag(), id: "sub_src_0"
                             = photos_form.hidden_field :status, value: "sub"
                       %li.list-group-item.col-md-4
                         .image-upload
                           = f.fields_for :photo, @photo do |photos_form|
-                            = photos_form.file_field :url
+                            = photos_form.file_field :url, id: "prototype_photo_url_sub_1"
+                            = image_tag(), id: "sub_src_1"
                             = photos_form.hidden_field :status, value: "sub"
                       %li.list-group-item.col-md-4
                         .image-upload-plus
