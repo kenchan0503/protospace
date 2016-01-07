@@ -10,7 +10,8 @@
                 .row
                   .col-md-12
                     .cover-image-upload
-                      = photos_form.file_field :url
+                      = photos_form.file_field :url, id: "prototype_photo_url_main"
+                      = image_tag (), id: "main_src"
                       = photos_form.hidden_field :status, value: "main"
                   .col-md-12
                     %ul.proto-sub-list.list-group
