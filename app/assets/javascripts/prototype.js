@@ -1,5 +1,4 @@
 $(function() {
-  $('input[type=file]').after('<span></span>');
 
   // アップロードするファイルを選択
   $("#prototype_photo_url_main").change(function() {
