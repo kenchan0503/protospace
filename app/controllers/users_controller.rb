@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(update_params)
+    redirect_to :root
   end
 
   private
