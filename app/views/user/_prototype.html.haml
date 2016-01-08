@@ -1,0 +1,13 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to image_tag(protolist.prototype_images.main.first.image), prototype_path(protolist.id)
+    .caption
+      %h3
+        = protolist.title
+      .proto-meta
+        .proto-date
+          Apr 26
+      %ul.proto-tag-list.list-inline
+        - @tags.each do |tag|
+          %li
+            = link_to "#{tag.name}", tag_path(tag), class: "btn btn-default"
