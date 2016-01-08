@@ -39,7 +39,7 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
-        - @tags.each do |tag|
+        - @prototype.tags.each do |tag|
           %li
             = link_to "#{tag.name}", tag_path(tag), class: "btn btn-default"
     %h4.col-md-12
