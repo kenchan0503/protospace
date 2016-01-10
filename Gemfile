@@ -27,3 +27,6 @@ group :development do
   gem 'carrierwave'
   gem 'kaminari'
 end
+
+gem 'fog'
+gem 'aws-sdk'
