@@ -29,4 +29,4 @@ group :development do
 end
 
 gem 'fog'
-gem 'aws-sdk'
+gem 'config'
