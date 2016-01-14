@@ -24,7 +24,7 @@ group :development do
   gem 'pry-rails'
   gem 'bootstrap-sass'
   gem 'devise'
-  gem 'carrierwave'
+  gem 'carrierwave', '0.8.0'
   gem 'kaminari'
 end
 
